@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root to: "home#show"
 
-  resources :time_logs, expect: :index
+  resources :time_logs
 end

@@ -1,0 +1,6 @@
+<div>
+  <h1>Most Recent Logs</h1>
+  <% @current_week_logs.map do |log| %> 
+    <%= render partial: "shared/logs", locals: { time_log: log } %>
+  <% end %> 
+</div>

@@ -18,7 +18,10 @@ class TimeLogsController < ApplicationController
 
   def show
     @time_log = TimeLog.find(params[:id])
-    render 'show'
+  end
+
+  def index
+    @current_week_logs = TimeLog.where(user_id: current_user.id).first(20)
   end
 
   private
