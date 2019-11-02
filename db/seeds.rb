@@ -18,15 +18,14 @@ Organization.create(
   name: 'Himamas'
 )
 
-5.times do 
-    TimeLog.create(
+5.times do
+  TimeLog.create(
     comments: "Arrived late due to doctor's appointment",
-    week_day: TimeLog::MONDAY,
-    purpose: 1,
+    week_day: TimeLog::WEEK_DAYS.sample,
+    purpose: TimeLog::MEAL_TIMES.sample,
     time_in: Date.current,
     time_out: Date.current + 12.hours,
-    user_id: User.first.id, 
-    organization_id: Organization.first.id
-    )
+    user_id: User.last.id,
+    organization_id: Organization.last.id
+  )
 end
-

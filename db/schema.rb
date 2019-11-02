@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_02_170211) do
   create_table "time_logs", force: :cascade do |t|
     t.string "comments", default: "", null: false
     t.integer "week_day"
-    t.integer "purpose"
+    t.string "purpose"
     t.datetime "time_in"
     t.datetime "time_out"
     t.datetime "created_at", null: false

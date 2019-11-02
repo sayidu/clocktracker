@@ -10,10 +10,10 @@ class TimeLog < ApplicationRecord
   ].freeze
 
   MEAL_TIMES = [
-    BREAKFAST = 1,
-    LUNCH = 2,
-    DINNER = 3
- ].freeze
+    BREAKFAST = 'B',
+    LUNCH = 'L',
+    DINNER = 'D'
+  ].freeze
 
 
   belongs_to :user
