@@ -2,7 +2,8 @@ class CreateTimeLogs < ActiveRecord::Migration[5.2]
   def change
     create_table :time_logs do |t|
       t.string :comments,         null: false, default: ""
-      t.integer :day
+      t.integer :week_day
+      t.integer :purpose
       t.datetime :time_in
       t.datetime :time_out
       t.timestamps null: false
