@@ -10,5 +10,6 @@
     <td><%= logs.purpose %></td>
     <td><%= logs.time_in %></td>
     <td><%= logs.time_out %></td>
+    <td><%= link_to "View Log", time_log_path(logs.id) %></td>
   </tr>
 </table>
