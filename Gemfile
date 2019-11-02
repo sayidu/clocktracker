@@ -15,13 +15,13 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'pry'
 gem 'rails', '~> 5.2.3'
-gem 'rspec', '~> 3.7'
 gem 'rubocop'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 

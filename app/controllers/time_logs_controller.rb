@@ -1,10 +1,17 @@
+# frozen_string_literal: true
+
 class TimeLogsController < ApplicationController
   def new
-    time_log = TimeLog.new
+    @time_log = TimeLog.new
   end
 
   def create
-    time_log = TimeLog.create(time_log_params)
+    time_log = TimeLog.new(time_log_params)
+    if time_log.save
+      redirect_to time_log_path(time_log.id)
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -12,9 +19,9 @@ class TimeLogsController < ApplicationController
     render 'show'
   end
 
-  private 
+  private
 
   def time_log_params
-    params.require(:time_log).permit()
+    params.require(:time_log).permit
   end
 end
