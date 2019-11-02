@@ -8,8 +8,8 @@
   </tr>
   <tr>
     <td><%= time_log.time_in.strftime("%m/%d/%Y") %></td>
-    <td><%= TimeLog.constants.find { |k| TimeLog.const_get(k) == time_log.week_day }.to_s.capitalize %></td>
-    <td><%= TimeLog.constants.find { |k| TimeLog.const_get(k) == time_log.purpose }.to_s.capitalize %></td>
+    <td><%= humanize(time_log.week_day) %></td>
+    <td><%= humanize(time_log.purpose) %></td>
     <td><%= time_log.time_in.strftime("%I:%M%p") %></td>
     <td><%= time_log.time_out.strftime("%I:%M%p")  %></td>
     <td><%= link_to "View Log", time_log_path(time_log.id) %></td>
