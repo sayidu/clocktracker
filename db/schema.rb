@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2019_11_02_170211) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "organization_id"
+    t.index ["organization_id"], name: "index_time_logs_on_organization_id"
     t.index ["user_id"], name: "index_time_logs_on_user_id"
   end
 
@@ -47,5 +49,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_170211) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "time_logs", "organizations"
   add_foreign_key "time_logs", "users"
 end

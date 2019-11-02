@@ -10,5 +10,6 @@ class CreateTimeLogs < ActiveRecord::Migration[5.2]
     end
 
     add_reference :time_logs, :user, foreign_key: true
+    add_reference :time_logs, :organization, foreign_key: true
   end
 end
