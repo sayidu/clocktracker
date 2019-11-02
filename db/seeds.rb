@@ -24,5 +24,6 @@ TimeLog.create(
   purpose: 1,
   time_in: Date.current,
   time_out: Date.current + 12.hours,
-  user_id: User.first.id
+  user_id: User.first.id, 
+  organization_id: Organization.first.id
 )

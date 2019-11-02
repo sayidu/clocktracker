@@ -1,17 +1,16 @@
 <div> 
-  <p>Clock In/Out Application</p>
-
-  <div>
-    @user_time_logs.map do |log|
-      <%= log.organization.name %>  
-    end 
-  </div>
+  <p><b>Clock In/Out Application</b></p>
 
   <% if user_signed_in? %>
+    <div>
+      <% @current_week_logs.map do |log| %> 
+       <%= render partial: "shared/logs", locals: { logs: log } %>
+      <% end %> 
+    </div>
     <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
     </li>
-    <% else %>
+  <% else %>
     <li>
     <%= link_to('Login', new_user_session_path) %>  
     </li>

@@ -14,4 +14,8 @@ class TimeLog < ApplicationRecord
     LUNCH = 2,
     DINNER = 3
  ].freeze
+
+
+  belongs_to :user
+  belongs_to :organization
 end
