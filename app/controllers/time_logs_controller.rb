@@ -9,7 +9,7 @@ class TimeLogsController < ApplicationController
     @time_log = TimeLog.new(time_log_params)
 
     if @time_log.save
-      redirect_to time_log_path(@time_log.id)
+      redirect_to time_logs_path
     else
       render 'new'
       flash[:error] = 'Failed to save time log'
@@ -20,8 +20,19 @@ class TimeLogsController < ApplicationController
     @time_log = TimeLog.find(params[:id])
   end
 
+  def edit
+    @time_log = TimeLog.find(params[:id])
+  end
+
+  def update
+    @time_log = TimeLog.find(params[:id])
+    if @time_log.update(time_log_params)
+      redirect_to time_logs_path
+    end
+  end
+
   def index
-    @current_week_logs = TimeLog.where(user_id: current_user.id).first(20)
+    @current_week_logs = TimeLog.where(user_id: current_user.id).recent_logs
   end
 
   private

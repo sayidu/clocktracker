@@ -2,12 +2,18 @@
   <h1 class="home__header">Clock In-Out Application</h1>
 
   <% if user_signed_in? %>
-    <li>
+    <p>  
+      <%= link_to 'Clock In', new_time_log_path %>        
+    </p> 
+    <p>  
+      <%= link_to 'View Logs', time_logs_path %>        
+    </p> 
+    <p>
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-    </li>
+    </p>
   <% else %>
-    <li>
+    <p>
     <%= link_to('Login', new_user_session_path) %>  
-    </li>
+    </p>
   <% end %>
 </div>

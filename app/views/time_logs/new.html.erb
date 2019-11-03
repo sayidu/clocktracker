@@ -1,9 +1,8 @@
 <%= simple_form_for @time_log do |f| %>
   <%= f.input :comments %>
-  <%= f.input :week_day, collection: TimeLog::WEEK_DAYS %>
-  <%= f.input :purpose, collection: TimeLog::MEAL_TIMES %>
+  <%= f.input :week_day, collection:  TimeLog.week_days, default: 1 %>
+  <%= f.input :purpose, collection: TimeLog.meal_times, default: 1 %>
   <%= f.input :time_in %>
-  <%= f.input :time_out %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%=  f.hidden_field :organization_id, value: 1 %>
   <%= f.button :submit %>

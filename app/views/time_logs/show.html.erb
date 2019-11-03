@@ -1,6 +1,11 @@
 <div>
-  <p><%= humanize(@time_log.week_day) %></p>
-  <p><%= humanize(@time_log.purpose) %></p>
+  <%= link_to 'Back', :back %>
+  <% if @time_log.time_out.nil? %>
+    <%= link_to 'Clock Out', edit_time_log_path(@time_log.id) %>
+  <% end %>
+
+  <p><%= humanize_week_day(@time_log.week_day) %></p>
+  <p><%= humanize_purpose(@time_log.purpose) %></p>
   <p><%= @time_log.time_in %></p>
   <p><%= @time_log.time_out %></p>
   <p><%= @time_log.comments %></p>

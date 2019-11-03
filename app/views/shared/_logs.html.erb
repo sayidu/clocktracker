@@ -8,10 +8,10 @@
   </tr>
   <tr>
     <td><%= time_log.time_in.strftime("%m/%d/%Y") %></td>
-    <td><%= humanize(time_log.week_day) %></td>
-    <td><%= humanize(time_log.purpose) %></td>
+    <td><%= humanize_week_day(time_log.week_day) %></td>
+    <td><%= humanize_purpose(time_log.purpose) %></td>
     <td><%= time_log.time_in.strftime("%I:%M%p") %></td>
-    <td><%= time_log.time_out.strftime("%I:%M%p")  %></td>
+    <td><%= time_log.time_out.strftime("%I:%M%p") if time_log.time_out.present?  %></td>
     <td><%= link_to "View Log", time_log_path(time_log.id) %></td>
   </tr>
 </table>

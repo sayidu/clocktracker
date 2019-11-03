@@ -1,5 +1,6 @@
 <div>
   <h1>Most Recent Logs</h1>
+  <%= link_to 'New Clock In', new_time_log_path %>
   <% @current_week_logs.map do |log| %> 
     <%= render partial: "shared/logs", locals: { time_log: log } %>
   <% end %> 

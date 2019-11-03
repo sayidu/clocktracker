@@ -21,8 +21,8 @@ Organization.create(
 5.times do
   TimeLog.create(
     comments: "Arrived late due to doctor's appointment",
-    week_day: TimeLog::WEEK_DAYS.sample,
-    purpose: TimeLog::MEAL_TIMES.sample,
+    week_day: TimeLog.week_days.keys.sample,
+    purpose: TimeLog.meal_times.keys.sample,
     time_in: Date.current,
     time_out: Date.current + 12.hours,
     user_id: User.last.id,

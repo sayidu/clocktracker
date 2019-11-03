@@ -1,21 +1,17 @@
 # frozen_string_literal: true
 
 class TimeLog < ApplicationRecord
-  WEEK_DAYS = [
-    MONDAY = 1,
-    TUESDAY = 2,
-    WEDNESDAY = 3,
-    THURSDAY = 4,
-    FRIDAY = 5
+  enum week_days: [:MONDAY, :TUESDAY, :WEDNESDAY, :THURSDAY, :FRIDAY].freeze
+  enum meal_times: [
+    :BREAKFAST,
+    :LUNCH,
+    :DINNER
   ].freeze
-
-  MEAL_TIMES = [
-    BREAKFAST = 'B',
-    LUNCH = 'L',
-    DINNER = 'D'
-  ].freeze
-
 
   belongs_to :user
   belongs_to :organization
+
+  scope :recent_logs, -> { order(created_at: :desc) }
+
+  validates_presence_of :week_day, :purpose, :time_in
 end

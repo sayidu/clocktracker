@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def humanize(week_day)
-    TimeLog.constants.find { |k| TimeLog.const_get(k) == week_day }.to_s.capitalize
+  def humanize_week_day(week_day)
+    TimeLog.week_days.key(week_day).capitalize
   end
 
-  def humanize(check_in_purpose)
-    TimeLog.constants.find { |k| TimeLog.const_get(k) == check_in_purpose }.to_s.capitalize
-  end 
+  def humanize_purpose(purpose)
+    TimeLog.meal_times.key(purpose).capitalize
+  end
 end
