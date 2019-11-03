@@ -4,6 +4,6 @@
   <%= f.input :purpose, collection: TimeLog.meal_times, default: 1 %>
   <%= f.input :time_in %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%=  f.hidden_field :organization_id, value: 1 %>
+  <%=  f.hidden_field :organization_id, value: Organization.first.id %>
   <%= f.button :submit %>
 <% end %>
