@@ -1,7 +1,6 @@
 <div class="home"> 
-  <h1 class="home__header">Clock In-Out Application For <%= current_user.organization.name %>  </h1>
-
   <% if user_signed_in? %>
+    <h1 class="home__header">Clock In-Out Application For <%=current_user.organization.name %>  </h1>
     <p>  
       <%= link_to 'Clock In', new_time_log_path %>        
     </p> 
@@ -12,8 +11,9 @@
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
     </p>
   <% else %>
+    <h1 class="home__header">Clock In-Out Application  </h1>
     <p>
-    <%= link_to('Login', new_user_session_path) %>  
+      <%= link_to('Login', new_user_session_path) %>  
     </p>
   <% end %>
 </div>
